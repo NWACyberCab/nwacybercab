@@ -13,6 +13,7 @@
 
   :root {
     --cyan: #ffffff;
+    --green: #00ff00;
     --cyan-dim: #cccccc;
     --cyan-glow: rgba(255,255,255,0.07);
     --dark: #0a0a0a;
@@ -128,7 +129,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(0,229,255,0.08);
+    background: rgba(0,255,115,0.15);
     border: 0.5px solid var(--border);
     border-radius: 2rem;
     padding: 0.35rem 1rem;
@@ -143,7 +144,7 @@
   .badge-dot {
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--cyan);
+    background: var(--green);
     animation: pulse 2s ease-in-out infinite;
   }
 
@@ -325,7 +326,7 @@
   .how-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
   }
 
@@ -904,6 +905,7 @@
 <nav>
   <div class="logo">Robo<span>ride</span></div>
   <ul class="nav-links">
+    <li><a href="#trust">Safety</a></li>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#coverage">Coverage</a></li>
@@ -958,7 +960,7 @@
 </div>
  
  <!-- TRUST -->
-<section style="padding-top: 1;">
+<section id="trust" style="padding-top: 0.3;">
   <div class="section-tag">Why Roboride</div>
   <h2 class="section-title">Safety-first, <em>always.</em></h2>
      <!-- Tesla FSD Safety Section -->
@@ -1013,7 +1015,7 @@
 </section>
  
 <!-- HOW IT WORKS -->
-<section id="how">
+<section id="how" style="padding-top: 0.2;">
   <div class="how-layout">
     <div>
       <div class="section-tag">How It Works</div>
@@ -1240,7 +1242,7 @@
   <p>Join the waitlist and be first to ride when Roboride launches in your city.</p>
 
   <div class="signup-form">
-    <input type="email" placeholder="josephbowers18@email.com">
+    <input type="email" placeholder="your@email.com">
     <a href="#" class="btn-primary" onclick="this.textContent='You\'re on the list! 🎉'; return false;">Join Waitlist</a>
   </div>
   <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1rem;">No spam. Unsubscribe anytime. We'll only email you when it matters.</p>
@@ -1265,25 +1267,26 @@
     <div class="footer-col">
       <h5>Company</h5>
       <ul>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#">About Us*</a></li>
         <li><a href="#">Safety</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Press</a></li>
+        <li><a href="#">Careers*</a></li>
+        <li><a href="#">Press*</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Support</h5>
       <ul>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms</a></li>
+        <li><a href="#">Help Center*</a></li>
+        <li><a href="#">Contact*</a></li>
+        <li><a href="#">Privacy Policy*</a></li>
+        <li><a href="#">Terms*</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Roboride NWA. All rights reserved.</span>
     <span>Fayetteville, Arkansas 🌲</span>
+    <span>*Coming soon.</span>
   </div>
 </footer>
 
