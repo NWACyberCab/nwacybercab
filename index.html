@@ -25,6 +25,14 @@
   @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   @keyframes spinRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
   @keyframes scrollLine { 0% { opacity: 0; transform: scaleY(0); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; } }
+  /* Responsive nav: CSS-driven so it keys off the real rendered width, not JS */
+  [data-nav-mobile] { display: none; }
+  [data-mobile-overlay] { display: none; }
+  @media (max-width: 900px) {
+    [data-nav-desktop] { display: none !important; }
+    [data-nav-mobile] { display: flex !important; }
+    [data-mobile-overlay].is-open { display: flex !important; }
+  }
 </style>
 </helmet>
 
@@ -38,25 +46,20 @@
 <div style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.1rem clamp(1.25rem,4vw,3.5rem); background:rgba(10,8,6,0.9); backdrop-filter:blur(12px); border-bottom:0.5px solid rgba(255,255,255,.08);">
   <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; color:#fff; letter-spacing:-0.02em;">Robo<span style="color:#e8b74e;">ride</span></div>
 
-  <sc-if value="{{ isDesktopNav }}" hint-placeholder-val="{{ true }}">
-    <ul style="display:flex; align-items:center; gap:2.2rem; list-style:none; margin:0; padding:0;">
-      <li><a href="#trust" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Safety</a></li>
-      <li><a href="#how" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">How It Works</a></li>
-      <li><a href="#services" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Services</a></li>
-      <li><a href="#coverage" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Coverage</a></li>
-      <li><a href="#pricing" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Pricing</a></li>
-      <li><a href="#signup" style="background:linear-gradient(135deg,#e8b74e,#c98f2b); color:#1a1206; padding:.55rem 1.4rem; border-radius:2rem; font-weight:600; font-size:.85rem; text-decoration:none;">Join Waitlist</a></li>
-    </ul>
-  </sc-if>
-  <sc-if value="{{ !isDesktopNav }}" hint-placeholder-val="{{ false }}">
-    <button onclick="{{ toggleMobileMenu }}" aria-label="Menu" style="background:none; border:1px solid rgba(255,255,255,.15); border-radius:.5rem; width:2.6rem; height:2.6rem; display:flex; align-items:center; justify-content:center; cursor:pointer;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
-    </button>
-  </sc-if>
+  <ul data-nav-desktop="" style="display:flex; align-items:center; gap:2.2rem; list-style:none; margin:0; padding:0;">
+    <li><a href="#trust" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Safety</a></li>
+    <li><a href="#how" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">How It Works</a></li>
+    <li><a href="#services" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Services</a></li>
+    <li><a href="#coverage" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Coverage</a></li>
+    <li><a href="#pricing" style="color:#a89c88; text-decoration:none; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;">Pricing</a></li>
+    <li><a href="#signup" style="background:linear-gradient(135deg,#e8b74e,#c98f2b); color:#1a1206; padding:.55rem 1.4rem; border-radius:2rem; font-weight:600; font-size:.85rem; text-decoration:none;">Join Waitlist</a></li>
+  </ul>
+  <button data-nav-mobile="" onclick="{{ toggleMobileMenu }}" aria-label="Menu" style="background:none; border:1px solid rgba(255,255,255,.15); border-radius:.5rem; width:2.6rem; height:2.6rem; align-items:center; justify-content:center; cursor:pointer;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+  </button>
 </div>
 
-<sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed; inset:0; z-index:99; background:rgba(10,8,6,0.98); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
+<div data-mobile-overlay="" class="{{ mobileOverlayClass }}" style="position:fixed; inset:0; z-index:99; background:rgba(10,8,6,0.98); flex-direction:column; align-items:center; justify-content:center; gap:2rem;">
     <a href="#trust" onclick="{{ closeMobileMenu }}" style="color:#e8e4dc; text-decoration:none; font-size:1.3rem; font-family:'Syne',sans-serif; font-weight:600;">Safety</a>
     <a href="#how" onclick="{{ closeMobileMenu }}" style="color:#e8e4dc; text-decoration:none; font-size:1.3rem; font-family:'Syne',sans-serif; font-weight:600;">How It Works</a>
     <a href="#services" onclick="{{ closeMobileMenu }}" style="color:#e8e4dc; text-decoration:none; font-size:1.3rem; font-family:'Syne',sans-serif; font-weight:600;">Services</a>
@@ -66,8 +69,7 @@
     <button onclick="{{ closeMobileMenu }}" aria-label="Close" style="position:absolute; top:1.3rem; right:clamp(1.25rem,4vw,3.5rem); background:none; border:none; cursor:pointer;">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
     </button>
-  </div>
-</sc-if>
+</div>
 
 <!-- HERO -->
 <div style="min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:clamp(6rem,14vw,9rem) clamp(1.25rem,5vw,2rem) 2.5rem; position:relative; overflow:hidden;">
@@ -148,9 +150,9 @@
   <div style="font-size:.75rem; color:#e8b74e; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.75rem; font-weight:500;">Why Roboride</div>
   <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.02em; margin:0 0 1.25rem;">Safety-first, <em style="font-style:normal; color:#e8b74e;">always.</em></h2>
 
-  <div style="display: flex; flex-direction: column; align-items: center; padding: clamp(1.5rem,4vw,2.5rem); background: #121009; border: 0.5px solid rgba(255,255,255,.08); border-radius: 1rem; margin: 2rem 0; width: 1086px; height: 493px">
-    <div style="width: 887px; max-width: 900px; background: #15120c; border: 0.5px solid rgba(255,255,255,.08); border-radius: .75rem; padding: clamp(1rem,3vw,1.75rem); height: 381px">
-      <img src="image/safety-chart.png" alt="Tesla FSD safety chart: miles driven before a major or minor collision, comparing Teslas driven with FSD supervised vs. manually" style="width: 841px; height: 335px; display: block; border-radius: .4rem; filter: invert(1) hue-rotate(180deg) contrast(1.15) brightness(1.05) saturate(1.1)">
+  <div style="display:flex; flex-direction:column; align-items:center; padding:clamp(1.5rem,4vw,2.5rem); background:#121009; border:0.5px solid rgba(255,255,255,.08); border-radius:1rem; margin:2rem 0; width:100%; max-width:100%; box-sizing:border-box;">
+    <div style="width:100%; max-width:900px; min-width:0; background:#15120c; border:0.5px solid rgba(255,255,255,.08); border-radius:.75rem; padding:clamp(1rem,3vw,1.75rem); box-sizing:border-box;">
+      <img src="image/safety-chart.png" alt="Tesla FSD safety chart: miles driven before a major or minor collision, comparing Teslas driven with FSD supervised vs. manually" style="width:100%; height:auto; max-width:100%; display:block; border-radius:.4rem; filter:invert(1) hue-rotate(180deg) contrast(1.15) brightness(1.05) saturate(1.1);">
     </div>
     <p style="font-size:.75rem; color:#a89c88; letter-spacing:.03em; margin:1.25rem 0 0;">Source: Tesla Vehicle Safety Report — miles driven per collision, FSD (Supervised) vs. manual driving.</p>
   </div>
@@ -410,7 +412,6 @@
 }">
 class Component extends DCLogic {
   state = {
-    isDesktopNav: typeof window !== 'undefined' ? window.innerWidth >= 900 : true,
     mobileMenuOpen: false,
     waitlistEmail: '',
     waitlistSubmitted: false,
@@ -436,13 +437,6 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
-    this._onResize = () => {
-      const desktop = window.innerWidth >= 900;
-      if (desktop !== this.state.isDesktopNav) {
-        this.setState({ isDesktopNav: desktop, mobileMenuOpen: desktop ? false : this.state.mobileMenuOpen });
-      }
-    };
-    window.addEventListener('resize', this._onResize);
     this._loadTweet();
     if (this.videoRef.current) {
       this.videoRef.current.defaultMuted = true;
@@ -466,7 +460,6 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this._onResize);
   }
 
   toggleMobileMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
@@ -561,8 +554,8 @@ class Component extends DCLogic {
       toggleVideoMute: this.toggleVideoMute,
       heroTweetUrl: this.props.heroTweetUrl ?? 'https://twitter.com/Tesla/status/1',
       heroYouTubeEmbedSrc: 'https://www.youtube-nocookie.com/embed/' + heroYouTubeId + '?modestbranding=1&rel=0&playsinline=1',
-      isDesktopNav: this.state.isDesktopNav,
       mobileMenuOpen: this.state.mobileMenuOpen,
+      mobileOverlayClass: this.state.mobileMenuOpen ? 'is-open' : '',
       toggleMobileMenu: this.toggleMobileMenu,
       closeMobileMenu: this.closeMobileMenu,
       cities,
