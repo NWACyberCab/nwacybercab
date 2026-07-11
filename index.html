@@ -28,10 +28,13 @@
   /* Responsive nav: CSS-driven so it keys off the real rendered width, not JS */
   [data-nav-mobile] { display: none; }
   [data-mobile-overlay] { display: none; }
+  [data-safety-mobile] { display: none; }
   @media (max-width: 900px) {
     [data-nav-desktop] { display: none !important; }
     [data-nav-mobile] { display: flex !important; }
     [data-mobile-overlay].is-open { display: flex !important; }
+    [data-safety-chart] { display: none !important; }
+    [data-safety-mobile] { display: flex !important; }
   }
 </style>
 </helmet>
@@ -150,11 +153,19 @@
   <div style="font-size:.75rem; color:#e8b74e; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.75rem; font-weight:500;">Why Roboride</div>
   <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.02em; margin:0 0 1.25rem;">Safety-first, <em style="font-style:normal; color:#e8b74e;">always.</em></h2>
 
-  <div style="display:flex; flex-direction:column; align-items:center; padding:clamp(1.5rem,4vw,2.5rem); background:#121009; border:0.5px solid rgba(255,255,255,.08); border-radius:1rem; margin:2rem 0; width:100%; max-width:100%; box-sizing:border-box;">
+  <div data-safety-chart="" style="display:flex; flex-direction:column; align-items:center; padding:clamp(1.5rem,4vw,2.5rem); background:#121009; border:0.5px solid rgba(255,255,255,.08); border-radius:1rem; margin:2rem 0; width:100%; max-width:100%; box-sizing:border-box;">
     <div style="width:100%; max-width:900px; min-width:0; background:#15120c; border:0.5px solid rgba(255,255,255,.08); border-radius:.75rem; padding:clamp(1rem,3vw,1.75rem); box-sizing:border-box;">
       <img src="image/safety-chart.png" alt="Tesla FSD safety chart: miles driven before a major or minor collision, comparing Teslas driven with FSD supervised vs. manually" style="width:100%; height:auto; max-width:100%; display:block; border-radius:.4rem; filter:invert(1) hue-rotate(180deg) contrast(1.15) brightness(1.05) saturate(1.1);">
     </div>
     <p style="font-size:.75rem; color:#a89c88; letter-spacing:.03em; margin:1.25rem 0 0;">Source: Tesla Vehicle Safety Report — miles driven per collision, FSD (Supervised) vs. manual driving.</p>
+  </div>
+
+  <div data-safety-mobile="" style="flex-direction:column; align-items:flex-start; gap:1.25rem; padding:1.75rem; background:#121009; border:0.5px solid rgba(255,255,255,.08); border-radius:1rem; margin:2rem 0;">
+    <p style="font-size:.95rem; color:#a89c88; line-height:1.7; margin:0;">Tesla's Full Self-Driving vehicles drive millions of miles between collisions — far beyond the U.S. average. See the full data in Tesla's official safety report.</p>
+    <a href="https://www.tesla.com/fsd/safety" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:.6rem; background:linear-gradient(135deg,#e8b74e,#c98f2b); color:#1a1206; padding:.85rem 1.6rem; border-radius:2rem; font-weight:600; font-size:.95rem; text-decoration:none;">
+      View Tesla's Safety Report
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1206" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg>
+    </a>
   </div>
 
   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin-top:3rem; text-align:center;">
