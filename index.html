@@ -585,5 +585,68 @@ class Component extends DCLogic {
 }
 
 </script>
+
+<!-- CONTACT SECTION -->
+<div id="contact" style="min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:clamp(4rem,10vw,8rem) clamp(1.25rem,5vw,2rem); position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(232,183,78,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(232,183,78,0.02) 1px, transparent 1px); background-size:60px 60px;"></div>
+  
+  <div style="position:relative; text-align:center; margin-bottom:4rem; max-width:720px;">
+    <h2 style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; letter-spacing:-0.03em; color:#fff; margin:0 0 1.5rem;">Get in Touch</h2>
+    <p style="font-size:1.1rem; color:#a89c88; margin:0;">Whether you're a customer with questions or a partner interested in collaboration, we'd love to hear from you.</p>
+  </div>
+
+  <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:3rem; max-width:900px; width:100%; margin-bottom:3rem;">
+    <!-- Contact Form -->
+    <div style="display:flex; flex-direction:column; gap:1.5rem;">
+      <div style="padding:2.5rem; background:rgba(232,183,78,0.05); border:0.5px solid rgba(255,255,255,.1); border-radius:12px;">
+        <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.3rem; color:#e8b74e; margin:0 0 1.5rem;">Send us a Message</h3>
+        <form style="display:flex; flex-direction:column; gap:1.2rem;">
+          <input type="text" placeholder="Your Name" style="padding:0.85rem 1.2rem; background:rgba(10,8,6,0.6); border:0.5px solid rgba(255,255,255,.15); border-radius:8px; color:#e8e4dc; font-family:'DM Sans',sans-serif; font-size:0.95rem;" required>
+          <input type="email" placeholder="Your Email" style="padding:0.85rem 1.2rem; background:rgba(10,8,6,0.6); border:0.5px solid rgba(255,255,255,.15); border-radius:8px; color:#e8e4dc; font-family:'DM Sans',sans-serif; font-size:0.95rem;" required>
+          <select style="padding:0.85rem 1.2rem; background:rgba(10,8,6,0.6); border:0.5px solid rgba(255,255,255,.15); border-radius:8px; color:#a89c88; font-family:'DM Sans',sans-serif; font-size:0.95rem;">
+            <option value="">Select Inquiry Type</option>
+            <option value="customer">Customer Support</option>
+            <option value="business">Business Partnership</option>
+            <option value="press">Press & Media</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea placeholder="Your Message" rows="5" style="padding:0.85rem 1.2rem; background:rgba(10,8,6,0.6); border:0.5px solid rgba(255,255,255,.15); border-radius:8px; color:#e8e4dc; font-family:'DM Sans',sans-serif; font-size:0.95rem; resize:none;" required></textarea>
+          <button type="submit" style="background:linear-gradient(135deg,#e8b74e,#c98f2b); color:#1a1206; border:none; padding:0.85rem 2rem; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:transform 0.2s ease;">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="display:flex; flex-direction:column; gap:2rem;">
+      <!-- Email -->
+      <div style="padding:2rem; background:rgba(232,183,78,0.05); border:0.5px solid rgba(255,255,255,.1); border-radius:12px;">
+        <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; color:#e8b74e; margin:0 0 0.8rem;">Email</h3>
+        <p style="margin:0; color:#e8e4dc; font-size:1rem;"><a href="mailto:contact@roboride.com" style="color:#e8b74e; text-decoration:none; font-weight:600;">contact@roboride.com</a></p>
+        <p style="margin:0.5rem 0 0; color:#a89c88; font-size:0.9rem;">We'll respond within 24 hours</p>
+      </div>
+
+      <!-- Business Inquiries -->
+      <div style="padding:2rem; background:rgba(232,183,78,0.05); border:0.5px solid rgba(255,255,255,.1); border-radius:12px;">
+        <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; color:#e8b74e; margin:0 0 0.8rem;">Business Partnerships</h3>
+        <p style="margin:0; color:#a89c88; font-size:0.9rem;">For corporate partnerships and enterprise solutions, contact:</p>
+        <p style="margin:0.5rem 0 0; color:#e8e4dc;"><a href="mailto:partners@roboride.com" style="color:#e8b74e; text-decoration:none; font-weight:600;">partners@roboride.com</a></p>
+      </div>
+
+      <!-- Service Areas -->
+      <div style="padding:2rem; background:rgba(232,183,78,0.05); border:0.5px solid rgba(255,255,255,.1); border-radius:12px;">
+        <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.1rem; color:#e8b74e; margin:0 0 0.8rem;">Service Area</h3>
+        <p style="margin:0; color:#a89c88; font-size:0.9rem;">Fayetteville, Bentonville, Rogers,<br>Springdale, and surrounding areas in Northwest Arkansas</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Stack for Mobile -->
+  <style>
+    @media (max-width: 900px) {
+      [data-contact-grid] { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</div>
+
 </body>
 </html>
