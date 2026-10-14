@@ -29,6 +29,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false); });
     window.addEventListener('resize', function () { setHH(); if (window.innerWidth > 1100 && nav.classList.contains('open')) setOpen(false, true); });
   }
+
+  // Header: shrink on scroll + reading-progress bar
+  var prog = header && header.querySelector('.progress'), ticking = false;
+  function onScroll() { ticking = false; var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    if (header) header.classList.toggle('scrolled', y > 24);
+    if (prog) prog.style.setProperty('--p', h > 0 ? Math.min(1, y / h) : 0); }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll(); setHH();
+  // Spotlight cards follow the pointer
+  document.querySelectorAll('.card.spot').forEach(function (c) { c.addEventListener('pointermove', function (e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); }); });
   // Reveal on scroll
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
