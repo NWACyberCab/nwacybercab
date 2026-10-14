@@ -72,7 +72,7 @@
   /* FSD counter (ported from the redesign) */
   [data-fsd-card] { position:relative; margin:2.5rem 0 0; padding:clamp(1.5rem,5vw,3rem); border-radius:1.5rem; border:0.5px solid rgba(232,183,78,.3); background:radial-gradient(ellipse at 0% 0%, rgba(232,183,78,.14), transparent 55%), linear-gradient(160deg,#121009,#0a0806); overflow:hidden; text-align:left; }
   [data-fsd-lbl] { font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:#e8b74e; font-weight:600; }
-  [data-fsd-miles] { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.1rem,10vw,6.2rem); letter-spacing:-.04em; line-height:1; color:#fff; margin:.8rem 0 .7rem; font-variant-numeric:tabular-nums; text-shadow:0 0 50px rgba(232,183,78,.35); white-space:nowrap; }
+  [data-fsd-miles] { font-family:'DM Sans',system-ui,-apple-system,"Segoe UI",sans-serif; font-weight:500; font-size:clamp(2.25rem,11vw,5.6rem); letter-spacing:normal; line-height:1.05; color:#fff; margin:.8rem 0 .7rem; font-variant-numeric:tabular-nums lining-nums; font-feature-settings:"tnum" 1,"lnum" 1; text-shadow:0 0 18px rgba(232,183,78,.14); white-space:nowrap; max-width:100%; }
   [data-fsd-proj] { display:inline-block; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:#f2b48a; border:0.5px solid rgba(232,138,78,.5); background:rgba(232,138,78,.08); padding:.3rem .8rem; border-radius:999px; }
   [data-fsd-details] { margin-top:1.4rem; border-top:0.5px solid rgba(255,255,255,.08); padding-top:.4rem; }
   [data-fsd-details] summary { cursor:pointer; color:#e8e4dc; font-weight:500; min-height:44px; display:flex; align-items:center; gap:.5rem; list-style:none; }
@@ -776,7 +776,16 @@ class Component extends DCLogic {
     if (hv) {
       hv.addEventListener('play', () => this.setState({ heroVideoPlaying: true }));
       hv.addEventListener('pause', () => this.setState({ heroVideoPlaying: false }));
-      if (!reducedMotion) { hv.muted = true; const p = hv.play(); if (p && p.catch) p.catch(() => {}); }
+      // Set as properties: React-style rendering can drop the boolean attributes, and iOS Safari needs them as properties.
+      hv.loop = true; hv.muted = true; hv.defaultMuted = true; hv.playsInline = true; hv.autoplay = !reducedMotion;
+      hv.setAttribute('playsinline', ''); hv.setAttribute('webkit-playsinline', '');
+      this._heroUserPaused = false;
+      // Fallback for browsers that ignore loop: restart at the end unless the visitor paused it.
+      hv.addEventListener('ended', () => {
+        if (this._heroUserPaused || reducedMotion) return;
+        hv.currentTime = 0; const p = hv.play(); if (p && p.catch) p.catch(() => {});
+      });
+      if (!reducedMotion) { const p = hv.play(); if (p && p.catch) p.catch(() => {}); }
     }
     // Tick the projected-miles counter smoothly (direct DOM write ~10x/second; no re-render needed).
     const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
@@ -895,7 +904,7 @@ class Component extends DCLogic {
   toggleHeroVideo = () => {
     const v = document.querySelector('[data-hero-video]');
     if (!v) return;
-    if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } else v.pause();
+    if (v.paused || v.ended) { this._heroUserPaused = false; v.loop = true; if (v.ended) v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } else { this._heroUserPaused = true; v.pause(); }
   };
 
   handleInterestChange = (e) => this.setState({ waitlistInterest: e.target.value });
