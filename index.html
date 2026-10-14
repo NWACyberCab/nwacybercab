@@ -29,17 +29,24 @@
 <meta name="theme-color" content="#0a0806">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RoboRide LLC","url":"https://www.nwaroboride.org/","logo":"https://www.nwaroboride.org/image/brand/roboride-icon-1024.png","foundingDate":"2026-06-08","founder":{"@type":"Person","name":"Joseph Bowers"},"description":"Autonomous vehicle operations company preparing to offer driverless rides and goods delivery in Northwest Arkansas.","areaServed":["Bentonville, AR","Rogers, AR","Springdale, AR","Fayetteville, AR","Farmington, AR","Siloam Springs, AR","Eureka Springs, AR"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is RoboRide operating yet?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. RoboRide LLC is preparing to launch and no cities are live today. Join the waitlist to hear when service starts in your area."}}, {"@type": "Question", "name": "Where will RoboRide operate?", "acceptedAnswer": {"@type": "Answer", "text": "Northwest Arkansas. The planned service area includes Bentonville, Rogers, Springdale, Fayetteville, Farmington, Siloam Springs, and Eureka Springs. We plan to launch city by city."}}, {"@type": "Question", "name": "What services will you offer?", "acceptedAnswer": {"@type": "Answer", "text": "Two things: driverless rides for people, and local delivery of goods for businesses and customers, both using autonomous Tesla Cybercabs."}}, {"@type": "Question", "name": "How much will it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing hasn't been set yet. Rates will be announced before launch, and waitlist members will hear first."}}, {"@type": "Question", "name": "Is RoboRide part of Tesla?", "acceptedAnswer": {"@type": "Answer", "text": "No. RoboRide LLC is an independent Northwest Arkansas company that plans to operate Tesla Cybercab vehicles. We are not affiliated with or endorsed by Tesla, Inc."}}, {"@type": "Question", "name": "I run a business. Can we work together?", "acceptedAnswer": {"@type": "Answer", "text": "We'd like to hear from you. Choose “Business partnership” on the waitlist form and we'll follow up about delivery, employee rides, or venue pickup zones."}}, {"@type": "Question", "name": "What happens to my email if I join the waitlist?", "acceptedAnswer": {"@type": "Answer", "text": "We use it only to contact you about RoboRide, and we will never sell it. See our Privacy Policy for details."}}]}</script>
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js"};</script>
 <script src="./support.js" defer></script>
+<link rel="preload" as="script" href="vendor/react.production.min.js">
+<link rel="preload" as="script" href="vendor/react-dom.production.min.js">
 <style>.rr-planned{opacity:.62}.rr-live{opacity:1;filter:drop-shadow(0 0 4px rgba(232,183,78,.9))}</style>
 </head>
 <body>
 <x-dc>
 <helmet data-dc-atomics="">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="fonts/syne-normal-latin-2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dmsans-normal-latin-1.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'DM Sans';font-style:italic;font-weight:300;font-display:swap;src:url(fonts/dmsans-italic-latin-0.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/dmsans-normal-latin-1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dmsans-normal-latin-1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dmsans-normal-latin-1.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Syne';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/syne-normal-latin-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/syne-normal-latin-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/syne-normal-latin-2.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
 <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="0,0"></x-import>
 <style>
   * { box-sizing: border-box; }
@@ -52,6 +59,7 @@
   .skip-link { position:absolute; left:-9999px; top:0; z-index:200; background:#e8b74e; color:#1a1206; padding:.6rem 1rem; border-radius:0 0 .5rem 0; font-weight:600; }
   .skip-link:focus { left:0; }
   details[open] summary { color:#e8b74e; }
+  #faq summary { padding:.6rem 0; }
   summary::marker { color:#e8b74e; }
   section[id], div[id] { scroll-margin-top: 4.5rem; }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
@@ -61,6 +69,33 @@
   @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   @keyframes spinRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
   @keyframes scrollLine { 0% { opacity: 0; transform: scaleY(0); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; } }
+  /* FSD counter (ported from the redesign) */
+  [data-fsd-card] { position:relative; margin:2.5rem 0 0; padding:clamp(1.5rem,5vw,3rem); border-radius:1.5rem; border:0.5px solid rgba(232,183,78,.3); background:radial-gradient(ellipse at 0% 0%, rgba(232,183,78,.14), transparent 55%), linear-gradient(160deg,#121009,#0a0806); overflow:hidden; text-align:left; }
+  [data-fsd-lbl] { font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:#e8b74e; font-weight:600; }
+  [data-fsd-miles] { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.1rem,10vw,6.2rem); letter-spacing:-.04em; line-height:1; color:#fff; margin:.8rem 0 .7rem; font-variant-numeric:tabular-nums; text-shadow:0 0 50px rgba(232,183,78,.35); white-space:nowrap; }
+  [data-fsd-proj] { display:inline-block; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:#f2b48a; border:0.5px solid rgba(232,138,78,.5); background:rgba(232,138,78,.08); padding:.3rem .8rem; border-radius:999px; }
+  [data-fsd-details] { margin-top:1.4rem; border-top:0.5px solid rgba(255,255,255,.08); padding-top:.4rem; }
+  [data-fsd-details] summary { cursor:pointer; color:#e8e4dc; font-weight:500; min-height:44px; display:flex; align-items:center; gap:.5rem; list-style:none; }
+  [data-fsd-details] summary::-webkit-details-marker { display:none; }
+  [data-fsd-details] summary::before { content:"+"; display:inline-flex; width:1.5rem; height:1.5rem; align-items:center; justify-content:center; border-radius:50%; border:0.5px solid rgba(232,183,78,.5); color:#e8b74e; font-weight:700; }
+  [data-fsd-details][open] summary::before { content:"–"; }
+  [data-fsd-details] summary:focus-visible { outline:2px solid #e8b74e; outline-offset:3px; border-radius:.4rem; }
+  [data-fsd-details] p { font-size:.85rem; color:#a89c88; line-height:1.65; margin:.6rem 0 0; max-width:760px; }
+  [data-fsd-details] p[data-fsd-src] { font-size:.78rem; color:#8a806f; }
+  /* Hero video: 3D tilting frame (ported from the redesign). Flat frame on touch/small screens; reduced motion shows the photo. */
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  [data-hero-video-wrap] { padding:7px; background:linear-gradient(150deg, rgba(246,213,140,.8), rgba(232,183,78,.12) 40%, rgba(232,183,78,.4)) !important; border:0 !important; border-radius:22px !important; box-shadow:0 30px 70px -25px rgba(0,0,0,.85), 0 0 90px -30px rgba(232,183,78,.5); overflow:visible !important; }
+  [data-hero-video-wrap] > video { inset:7px !important; width:calc(100% - 14px) !important; height:calc(100% - 14px) !important; border-radius:16px; background:#111; }
+  [data-hero-video-wrap]::after { content:""; position:absolute; inset:7px; border-radius:16px; background:linear-gradient(120deg, rgba(255,255,255,.16), transparent 32%); pointer-events:none; z-index:1; }
+  [data-hero-video-wrap] > button { z-index:2; bottom:19px !important; right:19px !important; }
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    [data-hero-video-wrap] { animation-name:fadeIn !important; transform:perspective(1200px) rotateY(var(--tilt-y,-12deg)) rotateX(var(--tilt-x,5deg)); transition:transform .25s ease-out; will-change:transform; }
+  }
+  @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+    [data-hero-video-wrap].dev-tilt { animation-name:fadeIn !important; transform:perspective(900px) rotateY(var(--tilt-y,0deg)) rotateX(var(--tilt-x,0deg)); will-change:transform; }
+  }
+  .tilt-hint { position:absolute; left:19px; bottom:19px; z-index:2; font-size:.72rem; font-weight:600; letter-spacing:.04em; color:#fff; background:rgba(10,8,6,.62); border:0.5px solid rgba(232,183,78,.45); padding:.35rem .7rem; border-radius:999px; opacity:0; transition:opacity .4s; pointer-events:none; }
+  .tilt-hint.show { opacity:1; }
   /* Responsive nav: CSS-driven so it keys off the real rendered width, not JS */
   [data-nav-mobile] { display: none; }
   [data-nav-desktop] a { white-space: nowrap; }
@@ -176,7 +211,7 @@
   <sc-if value="{{ isHeroPhoto }}" hint-placeholder-val="{{ true }}">
     <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: 16/9; animation: fadeUp .8s .4s ease both">
       <picture>
-        <source type="image/webp" srcset="image/hero-cybercab-960.webp 960w, image/hero-cybercab-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 720px">
+        <source type="image/avif" srcset="image/hero-cybercab-960.avif 960w, image/hero-cybercab-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 720px"><source type="image/webp" srcset="image/hero-cybercab-960.webp 960w, image/hero-cybercab-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 720px">
         <img src="image/hero-cybercab-1600.jpg" srcset="image/hero-cybercab-960.jpg 960w, image/hero-cybercab-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 720px" width="1600" height="900" fetchpriority="high" alt="A Tesla Cybercab, front view, with both doors raised" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:18px; border:0.5px solid rgba(255,255,255,.12);">
       </picture>
     </div>
@@ -194,7 +229,7 @@
     </div>
     <div data-hero-photo-fallback="" style="position:relative; width:100%; max-width:720px; aspect-ratio:16/9;">
       <picture>
-        <source type="image/webp" srcset="image/hero-cybercab-960.webp 960w, image/hero-cybercab-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 720px">
+        <source type="image/avif" srcset="image/hero-cybercab-960.avif 960w, image/hero-cybercab-1600.avif 1600w" sizes="(max-width: 760px) 100vw, 720px"><source type="image/webp" srcset="image/hero-cybercab-960.webp 960w, image/hero-cybercab-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 720px">
         <img src="image/hero-cybercab-1600.jpg" srcset="image/hero-cybercab-960.jpg 960w, image/hero-cybercab-1600.jpg 1600w" sizes="(max-width: 760px) 100vw, 720px" width="1600" height="900" loading="lazy" alt="A Tesla Cybercab, front view, with both doors raised" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:18px; border:0.5px solid rgba(255,255,255,.12);">
       </picture>
     </div>
@@ -244,16 +279,19 @@
   <p style="margin:1.5rem 0 0;"><a href="safety.html" style="font-weight:500;">How autonomous vehicles are regulated in Arkansas →</a></p>
 
   <!-- PROJECTED UNSUPERVISED MILES COUNTER (projection; config lives in the script: FSD_COUNTER) -->
-  <div id="fsd-counter" style="margin:2rem 0 0; padding:clamp(1.5rem,4vw,2.5rem); background:#121009; border:0.5px solid rgba(232,183,78,.25); border-radius:1rem; text-align:center;">
-    <div style="font-size:.75rem; color:#e8b74e; letter-spacing:.12em; text-transform:uppercase; font-weight:500;">Tesla Robotaxi fleet · projected unsupervised miles</div>
-    <div aria-hidden="true" data-fsd-miles="" style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.2rem,7vw,4.2rem); color:#fff; letter-spacing:-0.02em; line-height:1.1; margin:.6rem 0 .3rem; font-variant-numeric:tabular-nums;">{{ fsdMilesText }}</div>
+  <div id="fsd-counter" data-fsd-card="">
+    <div data-fsd-lbl="">Tesla Robotaxi fleet · projected unsupervised miles</div>
+    <div aria-hidden="true" data-fsd-miles="">{{ fsdMilesText }}</div>
     <p class="sr-only">Projected total: about {{ fsdMilesRounded }} unsupervised miles.</p>
-    <div style="display:inline-block; background:rgba(232,138,78,.12); border:0.5px solid rgba(232,138,78,.4); color:#f2b48a; border-radius:2rem; padding:.25rem .9rem; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; font-weight:600;">Projection, not official Tesla data</div>
+    <span data-fsd-proj="">Projection, not official Tesla data</span>
     <sc-if value="{{ fsdCapped }}" hint-placeholder-val="{{ false }}">
       <p style="font-size:.8rem; color:#f2b48a; margin:.8rem 0 0;">Projection paused: it has run {{ fsdMaxWeeks }} weeks past the last official figure and needs a new baseline.</p>
     </sc-if>
-    <p style="font-size:.82rem; color:#a89c88; max-width:680px; margin:1rem auto 0; line-height:1.65;"><strong style="color:#e8e4dc; font-weight:500;">Method:</strong> we start from Tesla's last stated total ({{ fsdBaseText }} unsupervised miles on {{ fsdBaseDateText }}) and assume growth of {{ fsdGrowthText }} a week continues: miles = base × (1 + growth)<sup>weeks since base</sup>. That rate is our own calculation, not a figure Tesla stated. It's the average weekly growth between Tesla's two announced totals: 380,000 miles on July 22 and 1,000,000 on Sept 3, 2026. (On its Q2 call Tesla described weekly mileage growth of "more than 10% a week.") Real growth may be faster or slower, so treat this as an estimate. It covers Tesla's own driverless fleet (mostly Model Y) in the cities where Tesla operates. RoboRide is not yet operating, and none of these are RoboRide miles.</p>
-    <p style="font-size:.75rem; color:#8a806f; margin:.8rem 0 0;">Sources: 1M miles announced by Ashok Elluswamy at Tesla's Cybercab event, Austin, Sept 3, 2026 (<a href="https://teslant.com/en/news/tesla-robotaxi-1-million-unsupervised-miles-2026-09" target="_blank" rel="noopener">TeslAnt</a>, <a href="https://evwire.com/p/tesla-cybercab-launch-event-full-video" target="_blank" rel="noopener">event video</a>) · 380,000-mile total and "more than 10% a week" remark, Q2 2026 earnings call, July 22, 2026 (<a href="https://www.fool.com/earnings/call-transcripts/2026/08/05/tesla-tsla-q2-2026-earnings-call-transcript/" target="_blank" rel="noopener">transcript</a>, <a href="https://www.businessinsider.com/tesla-q2-2026-earnings-robotaxi-paid-miles-fsd-cybercab-progress-2026-7" target="_blank" rel="noopener">Business Insider</a>).</p>
+    <details data-fsd-details="">
+      <summary>How this number is calculated</summary>
+      <p><strong style="color:#e8e4dc; font-weight:500;">Method:</strong> we start from Tesla's last stated total ({{ fsdBaseText }} unsupervised miles on {{ fsdBaseDateText }}) and assume growth of {{ fsdGrowthText }} a week continues: miles = base × (1 + growth)<sup>weeks since base</sup>, where weeks are counted continuously from the elapsed time (days ÷ 7), so the counter rises smoothly instead of jumping each week. That rate is our own calculation, not a figure Tesla stated. It's the average weekly growth between Tesla's two announced totals, 380,000 miles on July 22 and 1,000,000 on Sept 3, 2026, measured over the actual 43 days between them: (1,000,000 ÷ 380,000)<sup>7/43</sup> − 1. (On its Q2 call Tesla described weekly mileage growth of "more than 10% a week.") Real growth may be faster or slower, so treat this as an estimate. It covers Tesla's own driverless fleet (mostly Model Y) in the cities where Tesla operates. RoboRide is not yet operating, and none of these are RoboRide miles.</p>
+      <p data-fsd-src="">Sources: 1M miles announced by Ashok Elluswamy at Tesla's Cybercab event, Austin, Sept 3, 2026 (<a href="https://teslant.com/en/news/tesla-robotaxi-1-million-unsupervised-miles-2026-09" target="_blank" rel="noopener">TeslAnt</a>, <a href="https://evwire.com/p/tesla-cybercab-launch-event-full-video" target="_blank" rel="noopener">event video</a>) · 380,000-mile total and "more than 10% a week" remark, Q2 2026 earnings call, July 22, 2026 (<a href="https://www.fool.com/earnings/call-transcripts/2026/08/05/tesla-tsla-q2-2026-earnings-call-transcript/" target="_blank" rel="noopener">transcript</a>, <a href="https://www.businessinsider.com/tesla-q2-2026-earnings-robotaxi-paid-miles-fsd-cybercab-progress-2026-7" target="_blank" rel="noopener">Business Insider</a>).</p>
+    </details>
   </div>
 
   <div data-trust-cards="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:1.5rem; margin-top:3rem; text-align:center;">
@@ -396,7 +434,7 @@
       <p style="font-size:.72rem; color:#8a806f; margin:0;">Source: <a href="https://www.flyxna.com/airport-traffic-stats" target="_blank" rel="noopener" style="color:#a89c88;">XNA traffic stats</a> · <a href="https://talkbusiness.net/2026/01/xna-surpasses-clinton-national-in-enplanements-years-sooner-than-expected/" target="_blank" rel="noopener" style="color:#a89c88;">Talk Business &amp; Politics</a></p>
     </div>
     <div style="background:#15120c; border:0.5px solid rgba(255,255,255,.08); border-radius:1rem; padding:2rem;">
-      <div style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:700; color:#e8b74e; line-height:1.1;">~34,000</div>
+      <div style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3.5vw,2.4rem); font-weight:700; color:#e8b74e; line-height:1.1;">34K</div>
       <h3 style="font-family:'Syne',sans-serif; font-weight:600; font-size:1rem; color:#fff; margin:.5rem 0 .5rem;">University of Arkansas students</h3>
       <p style="font-size:.875rem; color:#a89c88; line-height:1.65; margin:0 0 .9rem;">Preliminary fall 2026 enrollment at the U of A in Fayetteville is about 34,000, with a record incoming class of more than 7,100.</p>
       <p style="font-size:.72rem; color:#8a806f; margin:0;">Source: <a href="https://news.uark.edu/articles/82837/incoming-class-sets-records-for-size-and-grade-point-average" target="_blank" rel="noopener" style="color:#a89c88;">University of Arkansas News</a> · <a href="https://fayettevilleflyer.com/2026/09/11/university-of-arkansas-records-highest-freshman-class-in-history/" target="_blank" rel="noopener" style="color:#a89c88;">Fayetteville Flyer</a></p>
@@ -420,7 +458,7 @@
         </sc-for>
       </div>
       <p style="font-size:.75rem; color:#a89c88; margin-top:.75rem;">* Coming soon. No cities are live yet.</p>
-      <p style="margin-top:1.25rem;"><a href="service-area.html" style="font-weight:500;">Explore the service area →</a></p>
+      <p style="margin-top:1.25rem;"><a href="service-area.html" style="font-weight:500;">Explore the service area →</a> <span aria-hidden="true" style="color:#5a5246">·</span> <a href="service-area.html#map" style="font-weight:500;">Picture a trip on the map →</a></p>
     </div>
 
     <div role="img" aria-label="Map of the planned RoboRide service area in Northwest Arkansas: Siloam Springs in the west, Eureka Springs in the east, and Bentonville, Rogers, Springdale, Fayetteville and Farmington along the I-49 corridor" style="position:relative; aspect-ratio:1; background:#15120c; border-radius:1rem; border:0.5px solid rgba(255,255,255,.08); overflow:hidden; display:flex; align-items:center; justify-content:center;">
@@ -436,16 +474,36 @@
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
         <!-- ROADS:BEGIN (generated from tools/map_roads.svg by tools/build_pages.py; edit there) -->
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M126 40 L131 99 L148 125 L153 162 L147 204 L144 270" stroke="rgba(232,183,78,.45)" stroke-width="3"></path>
-          <path d="M18 160 L40 161 L95 166 L153 162 L215 158 L285 150" stroke="rgba(232,183,78,.28)" stroke-width="2"></path>
-          <path d="M156 112 L200 108 L230 96 L260 89 L285 84" stroke="rgba(232,183,78,.28)" stroke-width="2"></path>
-          <path d="M131 99 L156 112" stroke="rgba(232,183,78,.22)" stroke-width="1.5"></path>
-          <path d="M95 225 L120 211 L147 204" stroke="rgba(232,183,78,.22)" stroke-width="1.5"></path>
-          <path d="M40 161 L60 120 L100 100 L131 99" stroke="rgba(232,183,78,.15)" stroke-width="1.2"></path>
+          <!-- Back roads (state highways), traced from OpenStreetMap route relations (ODbL) and simplified; drawn under the highways -->
+          <g class="backroads" stroke="rgba(232,183,78,.2)" stroke-width="1" stroke-dasharray="none">
+          <path data-road="AR-16" data-name="Wedington Dr" d="M147 204 L134 199 L109 199 L101 198 L94 190 L85 194 L73 191 L62 185 L50 174 L45 166 L40 161"></path>
+          <path data-road="AR-112" data-name="Garland Ave" d="M134 199 L125 166 L124 156 L125 136 L127 111"></path>
+          <path data-road="AR-265" data-name="Crossover Rd" d="M147 204 L153 205 L155 193 L156 175 L156 162 L156 119 L156 112"></path>
+          <path data-road="AR-45" data-name="Mission Blvd" d="M147 204 L168 190 L190 192 L204 180 L227 179 L227 157"></path>
+          <path data-road="AR-12" data-name="Regional Airport Blvd" d="M131 99 L127 111 L118 111 L116 118 L105 118 L105 123 L95 124 L92 136 L65 138 L60 137 L31 131"></path>
+          <path data-road="AR-12" d="M156 112 L156 105 L189 112 L202 127 L212 127 L214 143 L241 147 L253 134"></path>
+          <path data-road="AR-59" d="M40 161 L52 147 L60 137 L65 125 L62 111 L67 103 L64 82 L66 65 L56 56"></path>
+          <path data-road="AR-59" d="M40 161 L43 167 L42 203 L53 223 L53 233"></path>
+          <path data-road="AR-102" data-name="Centerton Blvd" d="M131 99 L95 103 L91 111 L62 111 L39 104 L29 95"></path>
+          <path data-road="AR-72" d="M131 99 L116 99 L99 79 L87 78 L74 84 L64 82 L46 80 L33 82 L23 88"></path>
+          <path data-road="AR-264" d="M92 136 L115 139 L125 136 L154 139"></path>
+          </g>
+          <path data-road="I-49" d="M126 40 L131 99 L156 112 L154 139 L153 162 L147 204 L144 270" stroke="rgba(232,183,78,.45)" stroke-width="3"></path>
+          <path data-road="US-412" d="M18 160 L40 161 L95 166 L125 166 L153 162 L156 162 L215 158 L227 157 L285 150" stroke="rgba(232,183,78,.28)" stroke-width="2"></path>
+          <path data-road="US-62" d="M156 112 L200 108 L230 96 L260 89 L285 84" stroke="rgba(232,183,78,.28)" stroke-width="2"></path>
+          <path data-road="US-62" d="M147 204 L134 207 L120 211 L105 238 L72 243 L42 229" stroke="rgba(232,183,78,.22)" stroke-width="1.5"></path>
         </g>
         <text x="131" y="52" font-size="7" fill="rgba(232,183,78,.6)" font-family="DM Sans, sans-serif">I-49</text>
         <text x="60" y="158" font-size="7" fill="rgba(232,183,78,.5)" font-family="DM Sans, sans-serif">US-412</text>
         <text x="208" y="98" font-size="7" fill="rgba(232,183,78,.5)" font-family="DM Sans, sans-serif">US-62</text>
+        <g font-size="5.5" fill="rgba(232,183,78,.42)" font-family="DM Sans, sans-serif" pointer-events="none">
+          <text x="74" y="200">AR-16</text>
+          <text x="112" y="150" text-anchor="end">AR-112</text>
+          <text x="159" y="134">AR-265</text>
+          <text x="186" y="199">AR-45</text>
+          <text x="66" y="133">AR-12</text>
+          <text x="58" y="96" text-anchor="end">AR-59</text>
+        </g>
         <!-- ROADS:END -->
         <!-- City dots (static SVG so the browser never sees template placeholders in numeric attributes).
              Keep in sync with rawCities in the script. City markers are the RoboRide pin (#rr-pin). Planned = class "rr-planned" (muted). To mark a city live: change it to class "rr-live" (full gold + glow). -->
@@ -499,10 +557,13 @@
 <section id="updates" data-screen-label="Updates" style="padding:0 clamp(1.25rem,4vw,3.5rem) 6rem; max-width:900px; margin:0 auto;">
   <div style="font-size:.75rem; color:#e8b74e; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.75rem; font-weight:500;">Latest updates</div>
   <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.02em; margin:0 0 .75rem;">Cybercab &amp; Robotaxi <em style="font-style:normal; color:#e8b74e;">news.</em></h2>
-  <p style="color:#a89c88; font-size:.9rem; margin:0 0 1.5rem;">Industry news from independent reporting, as of October 13, 2026. These are Tesla developments, not RoboRide announcements; RoboRide is not affiliated with Tesla.</p>
+  <p style="color:#a89c88; font-size:.9rem; margin:0 0 1.5rem;">Industry news from independent reporting, as of October 14, 2026. These are Tesla developments, not RoboRide announcements; RoboRide is not affiliated with Tesla.</p>
   <ul style="list-style:none; margin:0; padding:0; border-bottom:0.5px solid rgba(255,255,255,.08);">
-      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 10, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">Tesla says 300+ Cybercabs are serving Austin, and its SI lead says Dallas is next (“Dallas soon,” no date given). <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://dallas.culturemap.com/news/innovation/tesla-driverless-cybercabs-dallas/" target="_blank" rel="noopener">CultureMap Dallas</a>)</span></span></li>
-      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">NHTSA is reviewing how Tesla certified the Cybercab to federal safety standards; Tesla's sworn answers are due Oct 30. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://teslanorth.com/2026/10/09/texas-cybercab-registry/" target="_blank" rel="noopener">TeslaNorth</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Coming Oct 21</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">Tesla reports third-quarter 2026 results after the market closes on Oct 21, with a live Q&amp;A webcast at 4:30 p.m. Central. Teslarati notes the call is a natural venue for updated fleet numbers and a Dallas date. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.nasdaq.com/press-release/tesla-third-quarter-2026-production-deliveries-deployments-2026-10-02" target="_blank" rel="noopener">Tesla via Nasdaq</a> · <a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 13, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">NHTSA is reviewing a petition (DP26010, opened Oct 9) alleging Tesla robotaxis, both Model Y and Cybercab, exceeded active school-zone speed limits. It is not yet a formal investigation. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.theverge.com/transportation/1010364/tesla-robotaxi-school-zonespeeding-investigation" target="_blank" rel="noopener">The Verge</a> · <a href="https://www.autonews.com/regulation-safety/an-tesla-robotaxi-school-zone-speeding-nhtsa-1013/" target="_blank" rel="noopener">Automotive News</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 13, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">A Tesla UI engineer says on-demand rear and side camera views for Cybercab riders are “in development” (no date). Tesla’s Cybercab chief engineer also said new seats are coming. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.notateslaapp.com/news/4819/tesla-cybercab-to-let-riders-see-rear-and-side-camera-feeds" target="_blank" rel="noopener">Not a Tesla App</a> · <a href="https://evbytes.net/news/2026-10-13-new-cybercab-seats-and-very-cool-upgrades-coming-soon/" target="_blank" rel="noopener">EVBytes</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 10, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">Tesla says 300+ Cybercabs are serving Austin, and its SI lead says Dallas is next (“Dallas soon,” no date given). On Oct 8, Texas’s vehicle registry showed Tesla’s Cybercab count jump from 169 to 319. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://dallas.culturemap.com/news/innovation/tesla-driverless-cybercabs-dallas/" target="_blank" rel="noopener">CultureMap Dallas</a> · <a href="https://teslanorth.com/2026/10/09/texas-cybercab-registry/" target="_blank" rel="noopener">TeslaNorth</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">NHTSA is reviewing how Tesla certified the Cybercab to federal safety standards, including how it handles mirrors and rear visibility. Tesla got a 30-day extension to respond, and reports put the deadline for its sworn answers at Oct 30. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://teslanorth.com/2026/10/09/texas-cybercab-registry/" target="_blank" rel="noopener">TeslaNorth</a> · <a href="https://www.notateslaapp.com/news/4819/tesla-cybercab-to-let-riders-see-rear-and-side-camera-feeds" target="_blank" rel="noopener">Not a Tesla App</a>)</span></span></li>
       <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Sept 3–4, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">At its Austin Cybercab event Tesla announced 1 million unsupervised Robotaxi miles; public Cybercab rides in Austin opened the next day. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://teslant.com/en/news/tesla-robotaxi-1-million-unsupervised-miles-2026-09" target="_blank" rel="noopener">TeslAnt</a> · <a href="https://www.allthings-elon.com/articles/tesla-robotaxi-1-million-unsupervised-miles-2026-09-04" target="_blank" rel="noopener">All Things Elon</a>)</span></span></li>
       <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">July 22, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">On its Q2 call Tesla reported 380,000+ unsupervised Robotaxi miles across six cities in Texas and Florida. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.businessinsider.com/tesla-q2-2026-earnings-robotaxi-paid-miles-fsd-cybercab-progress-2026-7" target="_blank" rel="noopener">Business Insider</a>)</span></span></li>
   </ul>
@@ -596,9 +657,9 @@
     <div style="background:rgba(232,183,78,0.05); border:0.5px solid rgba(255,255,255,.1); border-radius:14px; padding:2.5rem;">
       <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.15rem; color:#fff; margin:0 0 .6rem;">Business &amp; Partners</h3>
       <p style="color:#a89c88; font-size:.925rem; margin:0 0 1.5rem;">Goods delivery, business accounts, venue pickup zones, and press.</p>
-      <a href="#signup" style="display:inline-block; background:transparent; color:#e8e4dc; border:0.5px solid rgba(255,255,255,.2); padding:.75rem 1.8rem; border-radius:2rem; font-weight:500; font-size:.9rem; text-decoration:none;">Register Business Interest</a>
+      <a href="businesses.html#interest" style="display:inline-block; background:transparent; color:#e8e4dc; border:0.5px solid rgba(255,255,255,.2); padding:.75rem 1.8rem; border-radius:2rem; font-weight:500; font-size:.9rem; text-decoration:none;">Register Business Interest</a>
       <!-- TODO (Joseph): add the business/partnerships email here once it exists. -->
-      <p style="margin:1.2rem 0 0; font-size:.8rem; color:#a89c88;">Choose “Business partnership” on the waitlist form.</p>
+      <p style="margin:1.2rem 0 0; font-size:.8rem; color:#a89c88;">Press? Choose “Press” on the <a href="#signup">waitlist form</a>.</p>
     </div>
   </div>
 
@@ -647,7 +708,7 @@
   <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.5rem; padding-top:1.5rem; border-top:0.5px solid rgba(255,255,255,.08); font-size:.8rem; color:#a89c88;">
     <span>© 2026 RoboRide LLC. All rights reserved. Tesla and Cybercab are trademarks of Tesla, Inc.; RoboRide is an independent company.</span>
     <span>Northwest Arkansas <span aria-hidden="true">🌲</span></span>
-    <ul data-social="" hidden="" aria-label="RoboRide on social media" style="list-style:none; display:flex; gap:1rem; margin:0; padding:0;"><li><a href="#" rel="me noopener">X</a></li><li><a href="#" rel="me noopener">Instagram</a></li><li><a href="#" rel="me noopener">Facebook</a></li></ul>
+    <!-- Social links go here once RoboRide accounts exist (X, Instagram, Facebook). -->
   </div>
   <div style="max-width:1200px; margin:.75rem auto 0; font-size:.7rem; color:#8a806f;">
     Cybercab photo (hero &amp; share image): “<a href="https://commons.wikimedia.org/wiki/File:Front_of_the_Tesla_Cybercab.jpg" target="_blank" rel="noopener" style="color:#a89c88;">Front of the Tesla Cybercab</a>” by Steve Jurvetson, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener" style="color:#a89c88;">CC BY 2.0</a>, cropped and resized. Used for illustration; RoboRide is not affiliated with Tesla, Inc.
@@ -667,8 +728,8 @@
 const FSD_COUNTER = {
   BASE_MILES: 1000000,                      // Ashok Elluswamy, Tesla Cybercab event, Austin
   BASE_DATE: '2026-09-03T19:00:00-05:00',   // Sept 3, 2026 (evening event; exact time approximate)
-  WEEKLY_GROWTH: 0.175,                     // derived: 380k (Jul 22) -> 1M (Sep 3, 2026) = (1e6/380e3)^(1/6) - 1 ≈ 17.5%/wk; not an official Tesla rate
-  MAX_WEEKS: 12                             // freezes ~Nov 26, 2026; re-baseline when Tesla states a new total
+  WEEKLY_GROWTH: 0.1706,                    // derived: 380k (Jul 22) -> 1M (Sep 3, 2026), 43 days apart: (1e6/380e3)^(7/43) - 1 ≈ 17.06%/wk; not an official Tesla rate
+  MAX_WEEKS: 12                             // freezes Nov 26, 2026 at ~6.6M; re-baseline when Tesla states a new total (Q3 call Oct 21)
 };
 // ===========================================================================
 function fsdProjection(now) {
@@ -720,12 +781,66 @@ class Component extends DCLogic {
     // Tick the projected-miles counter smoothly (direct DOM write ~10x/second; no re-render needed).
     const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const tick = () => {
-      const el = document.querySelector('[data-fsd-miles]');
-      if (el) el.textContent = fmt.format(Math.floor(fsdProjection(Date.now()).miles));
-    };
-    tick();
-    this._fsdTimer = setInterval(tick, reduce ? 5000 : 100);
+    // Count up from the base figure when the counter scrolls into view, then tick live.
+    // this._fsdText is what renderVals shows, so a re-render never fights the animation.
+    const setMiles = (n) => { this._fsdText = fmt.format(Math.floor(n)); const el = document.querySelector('[data-fsd-miles]'); if (el) el.textContent = this._fsdText; };
+    const tick = () => setMiles(fsdProjection(Date.now()).miles);
+    const startLive = () => { tick(); this._fsdTimer = setInterval(tick, reduce ? 5000 : 100); };
+    const card = document.querySelector('[data-fsd-miles]');
+    if (reduce || !card || !('IntersectionObserver' in window)) startLive();
+    else {
+      setMiles(FSD_COUNTER.BASE_MILES);
+      this._fsdIO = new IntersectionObserver((es) => {
+        if (!es[0].isIntersecting) return; this._fsdIO.disconnect();
+        const from = FSD_COUNTER.BASE_MILES, t0 = performance.now(), D = 1600;
+        const step = (t) => { const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3);
+          setMiles(from + (fsdProjection(Date.now()).miles - from) * e);
+          if (k < 1) requestAnimationFrame(step); else startLive(); };
+        requestAnimationFrame(step);
+      }, { threshold: 0.4 });
+      this._fsdIO.observe(card);
+    }
+    // 3D tilt on the hero video frame: pointer devices only, never with reduced motion.
+    const hw = document.querySelector('[data-hero-video-wrap]'), heroEl = document.querySelector('[data-hero]');
+    if (hw && heroEl && !reduce && window.matchMedia('(min-width: 1024px)').matches) {
+      heroEl.addEventListener('pointermove', (e) => { const r = hw.getBoundingClientRect(); const x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / r.width)), y = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / r.height));
+        hw.style.setProperty('--tilt-y', (-12 + x * 14).toFixed(2) + 'deg'); hw.style.setProperty('--tilt-x', (5 - y * 10).toFixed(2) + 'deg'); });
+      heroEl.addEventListener('pointerleave', () => { hw.style.removeProperty('--tilt-y'); hw.style.removeProperty('--tilt-x'); });
+    }
+    // Phones/tablets: gentle tilt from device orientation (smoothed, clamped, calibrated to how the phone is held).
+    else if (hw && !reduce && 'DeviceOrientationEvent' in window && window.matchMedia('(max-width: 1023px)').matches) {
+      const needsPerm = typeof DeviceOrientationEvent.requestPermission === 'function';
+      let base = null, tx = 0, ty = 0, cx = 0, cy = 0, raf = 0, got = false;
+      const hint = document.createElement('span'); hint.className = 'tilt-hint'; hint.setAttribute('aria-hidden', 'true');
+      hint.textContent = needsPerm ? 'Tap, then tilt your phone' : 'Tilt your phone';
+      const clamp = (v, m) => Math.max(-m, Math.min(m, v));
+      const angle = () => (screen.orientation && typeof screen.orientation.angle === 'number') ? screen.orientation.angle : (window.orientation || 0);
+      const loop = () => { cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+        const el = document.querySelector('[data-hero-video-wrap]'); if (el) { el.classList.add('dev-tilt'); el.style.setProperty('--tilt-y', cx.toFixed(2) + 'deg'); el.style.setProperty('--tilt-x', cy.toFixed(2) + 'deg'); }
+        raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.02 ? requestAnimationFrame(loop) : 0; };
+      const onOri = (e) => { if (e.beta == null || e.gamma == null) return;
+        const a = angle(); let x = e.gamma, y = e.beta;            // portrait
+        if (a === 90) { x = e.beta; y = -e.gamma; } else if (a === -90 || a === 270) { x = -e.beta; y = e.gamma; } else if (a === 180) { x = -e.gamma; y = -e.beta; }
+        if (!base) base = { x, y };
+        base.x += (x - base.x) * 0.01; base.y += (y - base.y) * 0.01; // slowly re-centre so it never gets stuck
+        tx = clamp((x - base.x) * 0.5, 9); ty = clamp(-(y - base.y) * 0.4, 7);
+        if (!got) { got = true; setTimeout(() => hint.classList.remove('show'), 2500); }
+        if (!raf) raf = requestAnimationFrame(loop); };
+      const reset = () => { base = null; };
+      window.addEventListener('orientationchange', reset); if (screen.orientation) screen.orientation.addEventListener('change', reset);
+      const listen = () => window.addEventListener('deviceorientation', onOri);
+      if (needsPerm) {
+        const ask = () => { document.removeEventListener('click', ask, true);
+          DeviceOrientationEvent.requestPermission().then((r) => { if (r === 'granted') listen(); else hint.classList.remove('show'); }).catch(() => hint.classList.remove('show')); };
+        document.addEventListener('click', ask, true);
+        (document.querySelector('[data-hero-video-wrap]') || hw).appendChild(hint); requestAnimationFrame(() => hint.classList.add('show'));
+      } else {
+        // Only show the hint once real orientation data arrives (desktop browsers expose the API but never fire it).
+        const first = (e) => { if (e.beta == null) return; window.removeEventListener('deviceorientation', first); (document.querySelector('[data-hero-video-wrap]') || hw).appendChild(hint); requestAnimationFrame(() => hint.classList.add('show')); };
+        window.addEventListener('deviceorientation', first); listen();
+      }
+      this._oriOff = () => { window.removeEventListener('deviceorientation', onOri); cancelAnimationFrame(raf); };
+    }
     this._onKey = (e) => { if (e.key === 'Escape' && this.state.mobileMenuOpen) this.closeMobileMenu(); };
     document.addEventListener('keydown', this._onKey);
 
@@ -754,7 +869,7 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this._onKey);
-    clearInterval(this._fsdTimer);
+    clearInterval(this._fsdTimer); if (this._fsdIO) this._fsdIO.disconnect(); if (this._oriOff) this._oriOff();
     document.body.style.overflow = '';
   }
 
@@ -902,13 +1017,13 @@ class Component extends DCLogic {
         const pr = fsdProjection(Date.now());
         const nf = new Intl.NumberFormat('en-US');
         return {
-          fsdMilesText: new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.floor(pr.miles)),
+          fsdMilesText: this._fsdText || new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(Math.floor(pr.miles)),
           fsdMilesRounded: nf.format(Math.round(pr.miles / 1000) * 1000),
           fsdCapped: pr.capped,
           fsdMaxWeeks: FSD_COUNTER.MAX_WEEKS,
           fsdBaseText: nf.format(FSD_COUNTER.BASE_MILES),
           fsdBaseDateText: new Date(FSD_COUNTER.BASE_DATE).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/Chicago' }),
-          fsdGrowthText: (Math.round(FSD_COUNTER.WEEKLY_GROWTH * 1000) / 10) + '%'
+          fsdGrowthText: (Math.round(FSD_COUNTER.WEEKLY_GROWTH * 1000) / 10).toFixed(1) + '%'
         };
       })(),
       // TODO (Joseph): no business emails yet. When you have them, add them in the Contact section
@@ -929,5 +1044,9 @@ class Component extends DCLogic {
 }
 
 </script>
+<aside aria-label="Page tools"><a href="#main" class="rr-to-top" aria-label="Back to top" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a></aside>
+<style>.rr-to-top{position:fixed;right:1rem;bottom:1rem;z-index:90;width:2.9rem;height:2.9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#15120c;border:.5px solid rgba(232,183,78,.45);color:#e8b74e;box-shadow:0 6px 18px rgba(0,0,0,.45);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s,transform .2s}.rr-to-top.show{opacity:1;transform:none;pointer-events:auto}.rr-to-top[hidden]{display:none}.rr-to-top:focus-visible{outline:2px solid #fff;outline-offset:3px}@media (min-width:1181px){.rr-to-top{display:none}}@media (prefers-reduced-motion:reduce){.rr-to-top{transition:none}}html.menu-open .rr-to-top{display:none}
+@media print{header,[data-mobile-overlay],.rr-to-top,form,video,[data-hero-video-wrap],[data-hero-scroll]{display:none!important}body,#dc-root,section,div{background:#fff!important;color:#000!important;box-shadow:none!important}h1,h2,h3,p,li,span,em,a{color:#000!important}}</style>
+<script>(function(){var t=document.querySelector('.rr-to-top');if(!t)return;t.hidden=false;function s(){t.classList.toggle('show',window.scrollY>window.innerHeight*1.2)}window.addEventListener('scroll',s,{passive:true});window.addEventListener('load',function(){setTimeout(s,0)});t.addEventListener('click',function(e){e.preventDefault();var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});var m=document.getElementById('main');if(m){m.setAttribute('tabindex','-1');m.focus({preventScroll:true})}})})();</script>
 </body>
 </html>
