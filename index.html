@@ -106,6 +106,8 @@
   }
   @media (max-width: 640px) { [data-hero] h1 br { display:none; } }
   html, body { overflow-x: clip; }
+  [id] { scroll-margin-top: calc(var(--hh, 78px) + 12px); }
+  html:not(.menu-open) { scroll-behavior: auto; }
   h1, h2, h3 { overflow-wrap: break-word; }
 </style>
 </helmet>
@@ -432,6 +434,7 @@
           </linearGradient>
         </defs>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+        <!-- ROADS:BEGIN (generated from tools/map_roads.svg by tools/build_pages.py; edit there) -->
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path d="M126 40 L131 99 L148 125 L153 162 L147 204 L144 270" stroke="rgba(232,183,78,.45)" stroke-width="3"></path>
           <path d="M18 160 L40 161 L95 166 L153 162 L215 158 L285 150" stroke="rgba(232,183,78,.28)" stroke-width="2"></path>
@@ -443,6 +446,7 @@
         <text x="131" y="52" font-size="7" fill="rgba(232,183,78,.6)" font-family="DM Sans, sans-serif">I-49</text>
         <text x="60" y="158" font-size="7" fill="rgba(232,183,78,.5)" font-family="DM Sans, sans-serif">US-412</text>
         <text x="208" y="98" font-size="7" fill="rgba(232,183,78,.5)" font-family="DM Sans, sans-serif">US-62</text>
+        <!-- ROADS:END -->
         <!-- City dots (static SVG so the browser never sees template placeholders in numeric attributes).
              Keep in sync with rawCities in the script. City markers are the RoboRide pin (#rr-pin). Planned = class "rr-planned" (muted). To mark a city live: change it to class "rr-live" (full gold + glow). -->
         <g data-city="Bentonville"><line x1="131" y1="99" x2="121" y2="92" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="131" cy="99" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="124.0" y="80.9" width="14" height="18.1"></use></g>
@@ -450,8 +454,8 @@
         <g data-city="Springdale"><line x1="153" y1="162" x2="165" y2="172" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="153" cy="162" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="146.0" y="143.9" width="14" height="18.1"></use></g>
         <g data-city="Fayetteville"><line x1="147" y1="204" x2="159" y2="206" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="147" cy="204" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="140.0" y="185.9" width="14" height="18.1"></use></g>
         <g data-city="Farmington"><line x1="120" y1="211" x2="112" y2="224" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="120" cy="211" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="113.0" y="192.9" width="14" height="18.1"></use></g>
-        <g data-city="Siloam Springs"><line x1="40" y1="161" x2="34" y2="145" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="40" cy="161" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="33.0" y="142.9" width="14" height="18.1"></use></g>
-        <g data-city="Eureka Springs"><line x1="260" y1="89" x2="266" y2="73" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="260" cy="89" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="253.0" y="70.9" width="14" height="18.1"></use></g>
+        <g data-city="Siloam Springs"><line x1="40" y1="161" x2="34" y2="135" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="40" cy="161" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="33.0" y="142.9" width="14" height="18.1"></use></g>
+        <g data-city="Eureka Springs"><line x1="260" y1="89" x2="266" y2="63" stroke="#e8b74e" stroke-width="0.75" opacity="0.4"></line><circle cx="260" cy="89" r="5" fill="none" stroke="#e8b74e" stroke-width="1" opacity="0.3"></circle><use href="#rr-pin" class="rr-pin rr-planned" x="253.0" y="70.9" width="14" height="18.1"></use></g>
       </svg>
       <div style="position:absolute; inset:0; z-index:3; pointer-events:none;">
         <sc-for list="{{ cities }}" as="city" hint-placeholder-count="7">
@@ -497,7 +501,7 @@
   <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.02em; margin:0 0 .75rem;">Cybercab &amp; Robotaxi <em style="font-style:normal; color:#e8b74e;">news.</em></h2>
   <p style="color:#a89c88; font-size:.9rem; margin:0 0 1.5rem;">Industry news from independent reporting, as of October 13, 2026. These are Tesla developments, not RoboRide announcements; RoboRide is not affiliated with Tesla.</p>
   <ul style="list-style:none; margin:0; padding:0; border-bottom:0.5px solid rgba(255,255,255,.08);">
-      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 10, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">Tesla says 300+ Cybercabs are serving Austin, and its AI lead says Dallas is next (“Dallas soon,” no date given). <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://dallas.culturemap.com/news/innovation/tesla-driverless-cybercabs-dallas/" target="_blank" rel="noopener">CultureMap Dallas</a>)</span></span></li>
+      <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 10, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">Tesla says 300+ Cybercabs are serving Austin, and its SI lead says Dallas is next (“Dallas soon,” no date given). <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://dallas.culturemap.com/news/innovation/tesla-driverless-cybercabs-dallas/" target="_blank" rel="noopener">CultureMap Dallas</a>)</span></span></li>
       <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Oct 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">NHTSA is reviewing how Tesla certified the Cybercab to federal safety standards; Tesla's sworn answers are due Oct 30. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.teslarati.com/tesla-cybercab-dallas/" target="_blank" rel="noopener">Teslarati</a> · <a href="https://teslanorth.com/2026/10/09/texas-cybercab-registry/" target="_blank" rel="noopener">TeslaNorth</a>)</span></span></li>
       <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">Sept 3–4, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">At its Austin Cybercab event Tesla announced 1 million unsupervised Robotaxi miles; public Cybercab rides in Austin opened the next day. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://teslant.com/en/news/tesla-robotaxi-1-million-unsupervised-miles-2026-09" target="_blank" rel="noopener">TeslAnt</a> · <a href="https://www.allthings-elon.com/articles/tesla-robotaxi-1-million-unsupervised-miles-2026-09-04" target="_blank" rel="noopener">All Things Elon</a>)</span></span></li>
       <li style="display:grid; grid-template-columns:minmax(0,8.5rem) 1fr; gap:1rem; padding:1.1rem 0; border-top:0.5px solid rgba(255,255,255,.08);"><span style="font-size:.78rem; color:#e8b74e; letter-spacing:.04em; text-transform:uppercase; padding-top:.15rem;">July 22, 2026</span><span style="font-size:.92rem; color:#e8e4dc; line-height:1.6;">On its Q2 call Tesla reported 380,000+ unsupervised Robotaxi miles across six cities in Texas and Florida. <span style="font-size:.78rem; color:#a89c88;">(<a href="https://www.businessinsider.com/tesla-q2-2026-earnings-robotaxi-paid-miles-fsd-cybercab-progress-2026-7" target="_blank" rel="noopener">Business Insider</a>)</span></span></li>
@@ -690,6 +694,21 @@ class Component extends DCLogic {
 
   componentDidMount() {
     this._loadTweet();
+    // Deep links (e.g. index.html#faq from a sub-page): the sections are rendered by JS after the
+    // browser's own hash jump, so scroll to the target once rendered, and again after late layout shifts.
+    const goHash = () => {
+      const id = decodeURIComponent((location.hash || '').slice(1));
+      const el = id && document.getElementById(id);
+      if (el) el.scrollIntoView({ block: 'start' });
+    };
+    if (location.hash) {
+      let userScrolled = false;
+      const stop = () => { userScrolled = true; };
+      ['wheel', 'touchstart', 'keydown'].forEach(t => window.addEventListener(t, stop, { once: true, passive: true }));
+      requestAnimationFrame(() => requestAnimationFrame(goHash));
+      [300, 900].forEach(ms => setTimeout(() => { if (!userScrolled) goHash(); }, ms));
+      window.addEventListener('load', () => { if (!userScrolled) goHash(); }, { once: true });
+    }
     // Hero video: autoplay (muted) only when the visitor hasn't asked for reduced motion.
     const hv = document.querySelector('[data-hero-video]');
     const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -815,8 +834,8 @@ class Component extends DCLogic {
       { name: 'Springdale', x: 153, y: 162, labelX: 165, labelY: 172, align: 'left', active: false },
       { name: 'Fayetteville', x: 147, y: 204, labelX: 159, labelY: 206, align: 'left', active: false },
       { name: 'Farmington', x: 120, y: 211, labelX: 112, labelY: 224, align: 'right', active: false },
-      { name: 'Siloam Springs', x: 40, y: 161, labelX: 34, labelY: 145, align: 'leftish', active: false },
-      { name: 'Eureka Springs', x: 260, y: 89, labelX: 266, labelY: 73, align: 'right', active: false }
+      { name: 'Siloam Springs', x: 40, y: 161, labelX: 34, labelY: 135, align: 'leftish', active: false },
+      { name: 'Eureka Springs', x: 260, y: 89, labelX: 266, labelY: 63, align: 'right', active: false }
     ];
     const VB = 300;
     // the <svg> sits at 88% width/height, centered (6% margin each side) inside its square wrapper
