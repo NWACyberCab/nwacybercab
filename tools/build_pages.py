@@ -64,7 +64,8 @@ def page(slug, title, desc, body, extra_head=""):
 <link rel="preload" href="fonts/syne-normal-latin-2.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/dmsans-normal-latin-1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
-{extra_head}</head>
+{extra_head}<script data-goatcounter="https://decisivetv.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
