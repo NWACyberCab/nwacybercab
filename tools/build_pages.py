@@ -29,6 +29,21 @@ def mail(key):
 NAV = [("index.html#how", "Riders", None), ("businesses.html", "Businesses", "businesses"), ("service-area.html", "Service Area", "service-area"),
        ("safety.html", "Safety", "safety"), ("about.html", "About", "about"), ("index.html#faq", "FAQ", None), ("index.html#contact", "Contact", None)]
 
+# ---------------- APP SHELL (Wild 2 "RoboRide App" chrome shared by every inner page) ----------------
+# Theme: rr-theme in localStorage ("light"/"dark"), else system preference; set before CSS loads so there's no flash.
+THEME_JS = '<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem("rr-theme")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";d.setAttribute("data-theme",t);d.classList.add("js")})()</script>'
+SIDE = '<aside class="side">\n  <div class="side-top"><a class="logo" href="index.html#ride" aria-label="RoboRide home"><img class="lg-w" src="image/brand/roboride-logo-white.svg" width="32" height="32" alt=""><img class="lg-d" src="image/brand/roboride-logo-dark.svg" width="32" height="32" alt="">Robo<span>Ride</span></a><button type="button" class="theme-btn" data-theme-toggle aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></div>\n  <nav class="side-tabs" aria-label="App sections"><ul><li><a href="index.html#ride" data-tab="ride"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-3h6l1 3"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg><span>Ride</span></a></li><li><a href="index.html#services" data-tab="services"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Services</span></a></li><li><a href="index.html#safety" data-tab="safety"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Safety</span></a></li><li><a href="index.html#news" data-tab="news"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 16h5"/></svg><span>News</span></a></li><li><a href="index.html#help" data-tab="help"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2.1-2.4 3.6M12 17h.01"/></svg><span>Help</span></a></li></ul></nav>\n  <div class="side-card"><p>Launching city by city across NWA.</p><a class="btn gold sm" href="index.html#signup">Join the waitlist</a></div>\n  <ul class="side-links"><li><a href="service-area.html">Service area map</a></li><li><a href="businesses.html">For businesses</a></li><li><a href="safety.html">Safety &amp; AV rules</a></li><li><a href="about.html">About</a></li><li><a href="press.html">Press</a></li><li><a href="privacy.html">Privacy</a></li></ul>\n</aside>'
+TOPBAR = '<header class="topbar"><a class="logo" href="index.html#ride" aria-label="RoboRide home"><img class="lg-w" src="image/brand/roboride-logo-white.svg" width="32" height="32" alt=""><img class="lg-d" src="image/brand/roboride-logo-dark.svg" width="32" height="32" alt="">Robo<span>Ride</span></a><div class="tb-r"><button type="button" class="theme-btn" data-theme-toggle aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><a class="btn gold sm" href="index.html#signup">Join waitlist</a></div></header>'
+TABBAR = '<nav class="tabbar" aria-label="App sections"><ul><li><a href="index.html#ride" data-tab="ride"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-6h9L18 17M8 11l1-3h6l1 3"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg><span>Ride</span></a></li><li><a href="index.html#services" data-tab="services"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>Services</span></a></li><li><a href="index.html#safety" data-tab="safety"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Safety</span></a></li><li><a href="index.html#news" data-tab="news"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 16h5"/></svg><span>News</span></a></li><li><a href="index.html#help" data-tab="help"><svg class="ic" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2.1-2.4 3.6M12 17h.01"/></svg><span>Help</span></a></li></ul></nav>'
+# Which app tab each inner page belongs to (highlighted in the side rail and the phone tab bar).
+TAB_OF = {"about": "help", "press": "help", "privacy": "help", "businesses": "services", "service-area": "services", "safety": "safety"}
+def cur_tab(snippet, slug):
+    t = TAB_OF[slug]
+    return snippet.replace(f'data-tab="{t}"', f'data-tab="{t}" aria-current="page"', 1)
+LOGO30 = '<img class="lg-w" src="image/brand/roboride-logo-white.svg" width="30" height="30" alt=""><img class="lg-d" src="image/brand/roboride-logo-dark.svg" width="30" height="30" alt="">'
+def dl(href, text):
+    return f'<a class="dl" href="{href}" download>{text}</a>'
+
 def ext(url, text):
     return f'<a href="{url}" target="_blank" rel="noopener">{text}</a>'
 
@@ -41,7 +56,9 @@ def page(slug, title, desc, body, extra_head=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} | RoboRide LLC</title>
 <meta name="description" content="{html.escape(desc)}">
-<meta name="theme-color" content="#0a0806">
+<meta name="theme-color" content="#0e1014" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
 <link rel="canonical" href="{SITE}{slug}.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RoboRide">
@@ -61,15 +78,15 @@ def page(slug, title, desc, body, extra_head=""):
 <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preload" href="fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+{THEME_JS}
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="wild-theme.css">
 {extra_head}<script data-goatcounter="https://decisivetv.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <a class="logo" href="index.html" aria-label="RoboRide home"><img src="image/brand/roboride-logo-white.svg" width="30" height="30" alt="" style="display:inline-block;vertical-align:-6px;margin-right:.5rem">Robo<span>Ride</span></a>
+  <a class="logo" href="index.html" aria-label="RoboRide home">{LOGO30}Robo<span>Ride</span></a>
   <nav id="site-nav" class="nav" aria-label="Primary">
     <ul>
 {nav}
@@ -80,6 +97,8 @@ def page(slug, title, desc, body, extra_head=""):
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
   </button>
 </header>
+{cur_tab(SIDE, slug)}
+{cur_tab(TOPBAR, slug)}
 <main id="main">
 {body}
 </main>
@@ -87,7 +106,7 @@ def page(slug, title, desc, body, extra_head=""):
   <div class="wrap">
     <div class="cols">
       <div>
-        <a class="logo" href="index.html"><img src="image/brand/roboride-logo-white.svg" width="30" height="30" alt="" style="display:inline-block;vertical-align:-6px;margin-right:.5rem">Robo<span>Ride</span></a>
+        <a class="logo" href="index.html">{LOGO30}Robo<span>Ride</span></a>
         <p class="muted small" style="max-width:280px">RoboRide LLC is preparing to offer autonomous Tesla Cybercab rides and goods delivery across Northwest Arkansas. Not affiliated with Tesla, Inc.</p>
       </div>
       <div><h2>Riders</h2><ul><li><a href="index.html#how">How it will work</a></li><li><a href="service-area.html">Service area</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#signup">Join the waitlist</a></li></ul></div>
@@ -101,6 +120,8 @@ def page(slug, title, desc, body, extra_head=""):
 </footer>
 <aside aria-label="Page tools"><a href="#main" class="to-top" aria-label="Back to top" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a></aside>
 <script src="site.js" defer></script>
+{cur_tab(TABBAR, slug)}
+<script src="app-shell.js" defer></script>
 </body>
 </html>
 '''
@@ -174,13 +195,18 @@ _ROOT = _pl.Path(__file__).resolve().parent.parent
 ROADS = (_ROOT / "tools/map_roads.svg").read_text().rstrip("\n")
 # Shared road layer: also written into index.html between ROADS markers so the two maps can't drift.
 _idx = (_ROOT / "index.html").read_text()
-_idx = _re.sub(r"(<!-- ROADS:BEGIN[^>]*-->\n).*?(\s*<!-- ROADS:END -->)", lambda m: m.group(1) + ROADS + m.group(2), _idx, flags=_re.S)
-(_ROOT / "index.html").write_text(_idx)
+if "<!-- ROADS:BEGIN" in _idx:
+  _idx = _re.sub(r"(<!-- ROADS:BEGIN[^>]*-->\n).*?(\s*<!-- ROADS:END -->)", lambda m: m.group(1) + ROADS + m.group(2), _idx, flags=_re.S)
+  (_ROOT / "index.html").write_text(_idx)
 # Label positions from index.html rawCities (labelX, labelY, align) so labels match the homepage map.
 LBL = {}
 for _m in _re.finditer(r"name: '([^']+)', x: \d+, y: \d+, labelX: (\d+), labelY: (\d+), align: '(\w+)'", _idx):
     _n, _lx, _ly, _al = _m.group(1), int(_m.group(2)), int(_m.group(3)), _m.group(4)
     LBL[_n] = (_lx, _ly, "start" if _al in ("left", "leftish") else "end")
+# Fallback label positions (same values the classic homepage map used) when index.html has no rawCities list.
+for _n, _v in {"Bentonville": (121, 92, "end"), "Rogers": (168, 114, "start"), "Springdale": (165, 172, "start"), "Fayetteville": (159, 206, "start"),
+               "Farmington": (112, 224, "end"), "Siloam Springs": (34, 135, "start"), "Eureka Springs": (266, 63, "end")}.items():
+    LBL.setdefault(_n, _v)
 CENSUS = "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/cities/totals/sub-est2025_5.csv"
 QF = "https://www.census.gov/quickfacts/"
 LATLON = {"Bentonville": (36.3729, -94.2088), "Rogers": (36.332, -94.1185), "Springdale": (36.1867, -94.1288), "Fayetteville": (36.0626, -94.1574), "Farmington": (36.042, -94.2471), "Siloam Springs": (36.1881, -94.5405), "Eureka Springs": (36.4011, -93.738)}  # city-center coordinates
@@ -438,12 +464,12 @@ page("press", "Press Kit", "Press information, boilerplate and media assets for 
   <div class="eyebrow">Assets</div>
   <h2>Logos &amp; <em class="hl">images.</em></h2>
   <div class="grid" style="margin-top:1.5rem">
-    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-logo-white.svg" width="96" height="96" alt="RoboRide logo, white" loading="lazy"></div><h3>Logo (white)</h3><p>For dark backgrounds. <a href="image/brand/roboride-logo-white.svg" download>SVG</a> · <a href="image/brand/roboride-logo-white-1024.png" download>PNG 1024</a></p></div>
-    <div class="card"><div style="background:#f4efe6;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-logo-dark.svg" width="96" height="96" alt="RoboRide logo, dark" loading="lazy"></div><h3>Logo (dark)</h3><p>For light backgrounds. <a href="image/brand/roboride-logo-dark.svg" download>SVG</a> · <a href="image/brand/roboride-logo-dark-1024.png" download>PNG 1024</a></p></div>
-    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-icon.svg" width="96" height="96" alt="RoboRide app icon" loading="lazy" style="border-radius:.6rem"></div><h3>App icon</h3><p>Square, on dark. <a href="image/brand/roboride-icon.svg" download>SVG</a> · <a href="image/brand/roboride-icon-1024.png" download>PNG 1024</a></p></div>
-    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-pin.svg" width="75" height="96" alt="RoboRide service-area pin" loading="lazy"></div><h3>Service-area pin (secondary mark)</h3><p>The RoboRide cab in a gold map pin. Use it for places RoboRide serves or plans to serve, not as a replacement for the main logo. <a href="image/brand/roboride-pin.svg" download>SVG</a> · <a href="image/brand/roboride-pin-512.png" download>PNG 512</a></p></div>
+    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-logo-white.svg" width="96" height="96" alt="RoboRide logo, white" loading="lazy"></div><h3>Logo (white)</h3><p>For dark backgrounds.<br>{dl("image/brand/roboride-logo-white.svg", "SVG")} {dl("image/brand/roboride-logo-white-1024.png", "PNG 1024")}</p></div>
+    <div class="card"><div style="background:#f4efe6;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-logo-dark.svg" width="96" height="96" alt="RoboRide logo, dark" loading="lazy"></div><h3>Logo (dark)</h3><p>For light backgrounds.<br>{dl("image/brand/roboride-logo-dark.svg", "SVG")} {dl("image/brand/roboride-logo-dark-1024.png", "PNG 1024")}</p></div>
+    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-icon.svg" width="96" height="96" alt="RoboRide app icon" loading="lazy" style="border-radius:.6rem"></div><h3>App icon</h3><p>Square, on dark.<br>{dl("image/brand/roboride-icon.svg", "SVG")} {dl("image/brand/roboride-icon-1024.png", "PNG 1024")}</p></div>
+    <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><img src="image/brand/roboride-pin.svg" width="75" height="96" alt="RoboRide service-area pin" loading="lazy"></div><h3>Service-area pin (secondary mark)</h3><p>The RoboRide cab in a gold map pin. Use it for places RoboRide serves or plans to serve, not as a replacement for the main logo.<br>{dl("image/brand/roboride-pin.svg", "SVG")} {dl("image/brand/roboride-pin-512.png", "PNG 512")}</p></div>
     <div class="card"><div style="background:#0a0806;border:.5px solid var(--line);border-radius:.6rem;padding:1.5rem;text-align:center;margin-bottom:1rem"><span class="logo" style="font-size:clamp(1.3rem,6vw,2rem);white-space:nowrap"><img src="image/brand/roboride-logo-white.svg" width="30" height="30" alt="" style="display:inline-block;vertical-align:-6px;margin-right:.5rem">Robo<span>Ride</span></span></div><h3>Wordmark</h3><p>Set in Sora ExtraBold; "Robo" in white, "Ride" in gold #E8B74E on dark #0A0806, with the logo to the left.</p></div>
-    <div class="card"><picture><source type="image/avif" srcset="image/founder-joseph-400.avif"><source type="image/webp" srcset="image/founder-joseph-400.webp"><img src="image/founder-joseph-400.jpg" alt="Joseph Bowers, founder of RoboRide LLC" width="400" height="500" loading="lazy" decoding="async" style="width:120px;height:auto;border-radius:.6rem;display:block;margin-bottom:1rem"></picture><h3>Founder headshot</h3><p>Joseph Bowers. <a href="image/founder-joseph-800.jpg" download>Download JPG (800×1000)</a></p></div>
+    <div class="card"><picture><source type="image/avif" srcset="image/founder-joseph-400.avif"><source type="image/webp" srcset="image/founder-joseph-400.webp"><img src="image/founder-joseph-400.jpg" alt="Joseph Bowers, founder of RoboRide LLC" width="400" height="500" loading="lazy" decoding="async" style="width:120px;height:auto;border-radius:.6rem;display:block;margin-bottom:1rem"></picture><h3>Founder headshot</h3><p>Joseph Bowers.<br>{dl("image/founder-joseph-800.jpg", "Download JPG (800×1000)")}</p></div>
     <div class="card"><picture><source type="image/avif" srcset="image/hero-cybercab-960.avif"><source type="image/webp" srcset="image/hero-cybercab-960.webp"><img src="image/hero-cybercab-960.jpg" alt="Front view of a Tesla Cybercab with doors raised" width="960" height="540" style="width:100%;height:auto;border-radius:.6rem;display:block;margin-bottom:1rem" loading="lazy" decoding="async"></picture><h3>Cybercab photo</h3><p>"Front of the Tesla Cybercab" by Steve Jurvetson, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>; credit required. <a href="https://commons.wikimedia.org/wiki/File:Front_of_the_Tesla_Cybercab.jpg" target="_blank" rel="noopener">Original</a></p></div>
   </div>
   <p class="tiny" style="margin-top:1.25rem">Brand colors: gold #E8B74E · deep gold #C98F2B · background #0A0806 · text #E8E4DC. Tesla and Cybercab are trademarks of Tesla, Inc.</p>
