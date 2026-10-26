@@ -17,3 +17,7 @@ Sora and Inter are self-hosted in `fonts/` (latin subset variable woff2, from Go
 ## React
 
 `vendor/react.production.min.js` and `vendor/react-dom.production.min.js` (React 18.3.1, © Meta Platforms, Inc.) are self-hosted copies, MIT License (https://github.com/facebook/react/blob/main/LICENSE).
+
+## Fraunces
+
+`fonts/fraunces-latin-wght-normal.woff2` (Fraunces variable, Undercase Type, via Fontsource) is self-hosted under the SIL Open Font License 1.1 (see `fonts/OFL-Fraunces.txt`).
