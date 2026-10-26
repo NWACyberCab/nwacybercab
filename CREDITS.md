@@ -17,3 +17,5 @@ Sora and Inter are self-hosted in `fonts/` (latin subset variable woff2, from Go
 ## React
 
 `vendor/react.production.min.js` and `vendor/react-dom.production.min.js` (React 18.3.1, © Meta Platforms, Inc.) are self-hosted copies, MIT License (https://github.com/facebook/react/blob/main/LICENSE).
+
+Inter Tight (used by the Showroom homepage and inner-page theme) is self-hosted in `fonts/` (latin variable woff2, via Fontsource) under the SIL Open Font License 1.1 (see `fonts/OFL-InterTight.txt`).
